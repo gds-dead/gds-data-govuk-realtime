@@ -1,0 +1,253 @@
+@import 'fonts';
+@import 'colours';
+@import 'mats_mixins';
+
+$xlarge: "min-width: 1900px";
+$large: "min-width: 1600px";
+$medium: "min-width: 1200px";
+$small: "min-width: 1000px";
+
+%title-underline {
+    display: inline-block;
+    line-height: 0.8;
+    border-bottom: 3px solid;
+}
+
+/* ******************************************************** */
+
+html {
+	height: 100%;
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    /*overflow: hidden;*/
+    /*cursor: none;*/
+	font-family: "ntatabularnumbers", "nta", Arial, sans-serif;
+	font-weight: bold;
+	color: $black;
+}
+
+.item {
+    position: absolute;
+    box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	right: -100%;
+	-webkit-transform: translateZ(0);
+	transition: right 0.5s ease-out;
+	background-color: $white;
+	&.now {
+		right: 0%;
+		z-index: 2;
+	}
+	&.prev {
+		right: 100%;
+		z-index: 1;
+	}
+}
+
+.item-container {
+    @extend %total-center;
+}
+
+.item-content {
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: left;
+}
+
+
+/* ******************************************************** */
+
+/* key colours */
+.multiple-realtime .key-colour {
+    background-color: $green;
+}
+
+
+/* ******************************************************** */
+
+/* figure grid */
+.figure-grid {
+    padding: 0 5%;
+    .title {
+        font-size: 3.75em;
+        @extend %title-underline;
+    }
+}
+.figure-items {
+    padding: 2% 0;
+}
+
+.figure-item {
+    float: left;
+    padding: 0 2% 2% 0;
+    .figure {
+        border-radius: 100%;
+        color: $white;
+        margin-bottom: 0.2em;
+        text-align: center;
+    }
+    .figure-title {
+        height: 3em;
+        font-size: 2em;
+        line-height: 1.1;
+    }
+}
+
+$xlarge-standard-diameter: 200px;
+$large-standard-diameter: 175px;
+$medium-standard-diameter: 140px;
+$small-standard-diameter: 140px;
+
+.figure-item {
+    width: $small-standard-diameter;
+    .figure {
+        font-size: 3.5em;
+        height: $small-standard-diameter;
+        line-height: $small-standard-diameter;
+    }
+    .figure-title {
+        font-size: 1.5em;
+    }
+
+    @media ($small) {
+        width: $small-standard-diameter;
+        .figure {
+            font-size: 3.5em;
+            height: $small-standard-diameter;
+            line-height: $small-standard-diameter;
+        }
+        .figure-title {
+            font-size: 1.5em;
+        }
+    }
+
+    @media ($medium) {
+        width: $medium-standard-diameter;
+        .figure {
+            font-size: 3.5em;
+            height: $medium-standard-diameter;
+            line-height: $medium-standard-diameter;
+        }
+        .figure-title {
+            font-size: 1.5em;
+        }
+    }
+
+    @media ($large) {
+        width: $large-standard-diameter;
+        .figure {
+            font-size: 4em;
+            height: $large-standard-diameter;
+            line-height: $large-standard-diameter;
+        }
+        .figure-title {
+            font-size: 1.75em;
+        }
+    }
+
+    @media ($xlarge) {
+        width: $xlarge-standard-diameter;
+        .figure {
+            font-size: 5em;
+            height: $xlarge-standard-diameter;
+            line-height: $xlarge-standard-diameter;
+        }
+        .figure-title {
+            font-size: 2em;
+        }
+    }
+}
+
+
+/* ******************************************************** */
+
+/* GOV.UK special circle! */
+
+$xlarge-gov-diameter: 375px;
+$large-gov-diameter: 350px;
+$medium-gov-diameter: 300px;
+$small-gov-diameter: 250px;
+
+.gov.figure-item .figure {
+    background-color: $black;
+}
+
+.gov.figure-item {
+    width: $small-gov-diameter;
+    .figure {
+        height: $small-gov-diameter;
+        font-size: 4.5em;
+        line-height: $small-gov-diameter;
+    }
+    .figure-title {
+        font-size: 2em;
+    }
+
+    @media ($small) {
+        width: $small-gov-diameter;
+        .figure {
+            font-size: 4.5em;
+            height: $small-gov-diameter;
+            line-height: $small-gov-diameter;
+        }
+        .figure-title {
+            font-size: 2em;
+        }
+    }
+
+    @media ($medium) {
+        width: $medium-gov-diameter;
+        .figure {
+            font-size: 4.5em;
+            height: $medium-gov-diameter;
+            line-height: $medium-gov-diameter;
+        }
+        .figure-title {
+            font-size: 2em;
+        }
+    }
+
+    @media ($large) {
+        width: $large-gov-diameter;
+        .figure {
+            font-size: 5em;
+            height: $large-gov-diameter;
+            line-height: $large-gov-diameter;
+        }
+        .figure-title {
+            font-size: 2em;
+        }
+    }
+
+    @media ($xlarge) {
+        width: $xlarge-gov-diameter;
+        .figure {
+            font-size: 5em;
+            height: $xlarge-gov-diameter;
+            line-height: $xlarge-gov-diameter;
+        }
+        .figure-title {
+            font-size: 2em;
+        }
+    }
+}
+
+/* GOV.UK logo */
+.govuk {
+    font-size: 95%;
+    text-transform: uppercase;
+    &.dot {
+        position: relative;
+        margin-left: -0.09em;
+    }
+}
+
