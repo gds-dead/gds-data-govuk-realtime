@@ -101,3 +101,10 @@ body {
   position: relative;
   margin-left: -0.09em;
 }
+
+/* ******************************************************** */
+.pp-powered {
+  position: absolute;
+  bottom: -7em;
+  font-size: 27px;
+}
