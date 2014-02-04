@@ -6,6 +6,7 @@ var list = {
   },
 };
 
+
 var loadRealtime = {
 
   loadUsers: function(obj) {
