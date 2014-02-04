@@ -50,11 +50,26 @@ body {
   /*overflow: hidden;*/
   /*cursor: none;*/
   font-family: "ntatabularnumbers", "nta", Arial, sans-serif;
-  font-size: 80px;
   line-height: 1.18;
   font-weight: bold;
   color: white;
   background-color: #0b0c0c;
+  font-size: 25px;
+}
+@media (min-width: 600px) {
+  body {
+    font-size: 30px;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 50px;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    font-size: 80px;
+  }
 }
 
 .item {
@@ -82,7 +97,7 @@ body {
 }
 
 .big-280 {
-  font-size: 280px;
+  font-size: 350%;
   line-height: 1;
 }
 
@@ -90,7 +105,24 @@ body {
 /* GOV.UK logo */
 .crown {
   position: relative;
-  top: 2px;
+  width: 37px;
+  top: 1px;
+}
+@media (min-width: 600px) {
+  .crown {
+    top: 2px;
+    width: 42px;
+  }
+}
+@media (min-width: 768px) {
+  .crown {
+    width: 66px;
+  }
+}
+@media (min-width: 1200px) {
+  .crown {
+    width: 96px;
+  }
 }
 
 .govuk {
@@ -105,6 +137,11 @@ body {
 /* ******************************************************** */
 .pp-powered {
   position: absolute;
-  bottom: -7em;
-  font-size: 27px;
+  font-size: 45%;
+  bottom: -4em;
+}
+@media (min-width: 600px) {
+  .pp-powered {
+    font-size: 33.75%;
+  }
 }

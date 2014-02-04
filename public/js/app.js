@@ -17281,51 +17281,6 @@ var list = {
     usersCount: [],
     cssClass: '.gov'
   },
-  carers: {
-    urlUsers: '/carers-users',
-    usersCount: [],
-    cssClass: '.carers'
-  },
-  licensing: {
-    urlUsers: '/licensing-users',
-    usersCount: [],
-    cssClass: '.licensing'
-  },
-  legalise: {
-    urlUsers: '/legalise-users',
-    usersCount: [],
-    cssClass: '.legalise'
-  },
-  legalisePremium: {
-    urlUsers: '/legalise-premium-users',
-    usersCount: [],
-    cssClass: '.legalise-premium'
-  },
-  marriedAbroad: {
-    urlUsers: '/married-abroad-users',
-    usersCount: [],
-    cssClass: '.married-abroad'
-  },
-  birthAbroad: {
-    urlUsers: '/birth-abroad-users',
-    usersCount: [],
-    cssClass: '.birth-abroad'
-  },
-  deathAbroad: {
-    urlUsers: '/death-abroad-users',
-    usersCount: [],
-    cssClass: '.death-abroad'
-  },
-  sorn: {
-    urlUsers: '/sorn-users',
-    usersCount: [],
-    cssClass: '.sorn'
-  },
-  taxDisc: {
-    urlUsers: '/tax-disc-users',
-    usersCount: [],
-    cssClass: '.tax-disc'
-  }
 };
 
 var loadRealtime = {

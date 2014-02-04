@@ -2,10 +2,9 @@
 @import 'colours';
 @import 'mats_mixins';
 
-$xlarge: "min-width: 1900px";
-$large: "min-width: 1600px";
-$medium: "min-width: 1200px";
-$small: "min-width: 1000px";
+$large: "min-width: 1200px";
+$medium: "min-width: 768px";
+$small: "min-width: 600px";
 
 /* ******************************************************** */
 
@@ -24,11 +23,20 @@ body {
     /*overflow: hidden;*/
     /*cursor: none;*/
 	font-family: "ntatabularnumbers", "nta", Arial, sans-serif;
-    font-size: 80px;
     line-height: 1.18;
 	font-weight: bold;
 	color: $white;
     background-color: $black;
+    font-size: 25px;
+    @media ($small) {
+        font-size: 30px;
+    }
+    @media ($medium) {
+        font-size: 50px;
+    }
+    @media ($large) {
+        font-size: 80px;
+    }
 }
 
 .item {
@@ -61,7 +69,7 @@ body {
 
 
 .big-280 {
-    font-size: 280px;
+    font-size: 350%;
     line-height: 1;
 }
 
@@ -70,7 +78,18 @@ body {
 /* GOV.UK logo */
 .crown {
     position:relative;
-    top:2px;
+    width: 37px;
+    top: 1px;
+    @media ($small) {
+        top:2px;
+        width: 42px;
+    }
+    @media ($medium) {
+        width: 66px;
+    }
+    @media ($large) {
+        width: 96px;
+    }
 }
 .govuk {
     font-size: 95%;
@@ -86,6 +105,9 @@ body {
 
 .pp-powered {
     position: absolute;
-    bottom: -7em;
-    font-size: 27px;
+    font-size: 45%;
+    bottom: -4em;
+    @media ($small) {
+        font-size: 33.75%;
+    }
 }
