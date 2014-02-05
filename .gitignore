@@ -1,8 +1,3 @@
-# Generated files in public folders #
-#####################################
-public/css
-public/js
-
 # Sass #
 ########
 .sass-cache
