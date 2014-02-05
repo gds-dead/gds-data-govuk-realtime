@@ -56,17 +56,17 @@ body {
   background-color: #0b0c0c;
   font-size: 25px;
 }
-@media (min-width: 600px) {
-  body {
-    font-size: 30px;
-  }
-}
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   body {
     font-size: 50px;
   }
 }
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
+  body {
+    font-size: 60px;
+  }
+}
+@media screen and (min-width: 1900px) {
   body {
     font-size: 80px;
   }
@@ -105,21 +105,20 @@ body {
 /* GOV.UK logo */
 .crown {
   position: relative;
-  width: 37px;
-  top: 1px;
+  top: 2px;
+  width: 36px;
 }
-@media (min-width: 600px) {
+@media screen and (min-width: 768px) {
   .crown {
-    top: 2px;
-    width: 42px;
+    width: 62px;
   }
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .crown {
-    width: 66px;
+    width: 75px;
   }
 }
-@media (min-width: 1200px) {
+@media screen and (min-width: 1900px) {
   .crown {
     width: 96px;
   }
@@ -137,10 +136,10 @@ body {
 /* ******************************************************** */
 .pp-powered {
   position: absolute;
-  font-size: 45%;
   bottom: -4em;
+  font-size: 50%;
 }
-@media (min-width: 600px) {
+@media screen and (min-width: 1200px) {
   .pp-powered {
     font-size: 33.75%;
   }
