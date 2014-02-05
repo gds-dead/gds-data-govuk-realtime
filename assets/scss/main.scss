@@ -28,13 +28,13 @@ body {
 	color: $white;
     background-color: $black;
     font-size: 25px;
-    @media ($small) {
+    @media #{$small} {
         font-size: 30px;
     }
-    @media ($medium) {
+    @media #{$medium} {
         font-size: 50px;
     }
-    @media ($large) {
+    @media #{$large} {
         font-size: 80px;
     }
 }
@@ -80,14 +80,14 @@ body {
     position:relative;
     width: 37px;
     top: 1px;
-    @media ($small) {
+    @media #{$small} {
         top:2px;
         width: 42px;
     }
-    @media ($medium) {
+    @media #{$medium} {
         width: 66px;
     }
-    @media ($large) {
+    @media #{$large} {
         width: 96px;
     }
 }
@@ -107,7 +107,7 @@ body {
     position: absolute;
     font-size: 45%;
     bottom: -4em;
-    @media ($small) {
+    @media #{$small} {
         font-size: 33.75%;
     }
 }
