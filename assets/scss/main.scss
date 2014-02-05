@@ -2,9 +2,9 @@
 @import 'colours';
 @import 'mats_mixins';
 
+$xlarge: "screen and (min-width: 1900px)";
 $large: "screen and (min-width: 1200px)";
-$medium: "screen and (min-width: 768px)";
-$small: "screen and (min-width: 600px)";
+$tablet: "screen and (min-width: 768px)";
 
 /* ******************************************************** */
 
@@ -28,15 +28,9 @@ body {
 	color: $white;
     background-color: $black;
     font-size: 25px;
-    @media #{$small} {
-        font-size: 30px;
-    }
-    @media #{$medium} {
-        font-size: 50px;
-    }
-    @media #{$large} {
-        font-size: 80px;
-    }
+    @media #{$tablet} { font-size: 50px; }
+    @media #{$large} { font-size: 60px; }
+    @media #{$xlarge} { font-size: 80px; }
 }
 
 .item {
@@ -78,16 +72,15 @@ body {
 /* GOV.UK logo */
 .crown {
     position:relative;
-    width: 37px;
-    top: 1px;
-    @media #{$small} {
-        top:2px;
-        width: 42px;
-    }
-    @media #{$medium} {
-        width: 66px;
+    top:2px;
+    width: 36px;
+    @media #{$tablet} {
+        width: 62px;
     }
     @media #{$large} {
+        width: 75px;
+    }
+    @media #{$xlarge} {
         width: 96px;
     }
 }
@@ -105,9 +98,9 @@ body {
 
 .pp-powered {
     position: absolute;
-    font-size: 45%;
     bottom: -4em;
-    @media #{$small} {
+    font-size: 50%;
+    @media #{$large} {
         font-size: 33.75%;
     }
 }
