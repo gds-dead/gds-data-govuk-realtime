@@ -2,9 +2,9 @@
 @import 'colours';
 @import 'mats_mixins';
 
-$large: "min-width: 1200px";
-$medium: "min-width: 768px";
-$small: "min-width: 600px";
+$large: "screen and (min-width: 1200px)";
+$medium: "screen and (min-width: 768px)";
+$small: "screen and (min-width: 600px)";
 
 /* ******************************************************** */
 
