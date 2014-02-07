@@ -50,8 +50,8 @@ $(function() {
   loadRealtime.reloadUsers();
 
   // set up a "wobble"
-  var wobble = window.setInterval(loadRealtime.wobbleDisplays, 10e3);
-  // poll gov.uk once every hour(?)
-  var update = window.setInterval(loadRealtime.reloadUsers, 3600000);
+  var wobble = window.setInterval(loadRealtime.wobbleDisplays, 10*1000);
+  // poll gov.uk once every 5 mins(?)
+  var update = window.setInterval(loadRealtime.reloadUsers, 5*60*1000);
 
 });
