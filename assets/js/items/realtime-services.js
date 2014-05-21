@@ -129,7 +129,7 @@ $(function() {
     loadOffline.loadUsers();
 
     // ...and simply increment once every 2 mins to (almost) match JSON data
-    var update = window.setInterval(loadRealtime.incrementUsers, 2*60*1000);
+    var update = window.setInterval(loadOffline.incrementUsers, 2*60*1000);
 
   }
 
