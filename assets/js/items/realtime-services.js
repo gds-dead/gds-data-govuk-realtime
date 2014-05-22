@@ -57,7 +57,7 @@ var loadOffline = {
     $.ajax({
       dataType: 'json',
       cache: false,
-      url: '../data/realtime.json',
+      url: 'data/realtime.json',
       success: function(d) {
         loadOffline.jsonData = d.data;
         loadOffline.initDisplay();
