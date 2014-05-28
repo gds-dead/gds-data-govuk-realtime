@@ -50,20 +50,8 @@ var loadRealtime = {
 
 var loadOffline = {
 
-  jsonData: {},
+  jsonData: realtime_json.data,
   startCounter: 0,
-
-  loadUsers: function() {
-    $.ajax({
-      dataType: 'json',
-      cache: false,
-      url: 'data/realtime.json',
-      success: function(d) {
-        loadOffline.jsonData = d.data;
-        loadOffline.initDisplay();
-      }
-    });
-  },
 
   initDisplay: function() {
 
@@ -115,7 +103,15 @@ var loadOffline = {
 
 $(function() {
 
-  if (offline === false) {
+  if (typeof offline !== 'undefined') {
+
+    //loadOffline.loadUsers();
+    loadOffline.initDisplay();
+
+    // ...and simply increment once every 2 mins to (almost) match JSON data
+    var update = window.setInterval(loadOffline.incrementUsers, 2*60*1000);
+
+  } else {
 
     loadRealtime.reloadUsers();
 
@@ -123,13 +119,6 @@ $(function() {
     var wobble = window.setInterval(loadRealtime.wobbleDisplays, 10*1000);
     // poll gov.uk once every 5 mins(?)
     var update = window.setInterval(loadRealtime.reloadUsers, 5*60*1000);
-
-  } else {
-
-    loadOffline.loadUsers();
-
-    // ...and simply increment once every 2 mins to (almost) match JSON data
-    var update = window.setInterval(loadOffline.incrementUsers, 2*60*1000);
 
   }
 
