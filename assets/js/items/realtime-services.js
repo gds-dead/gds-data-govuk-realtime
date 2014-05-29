@@ -1,5 +1,3 @@
-var offline = true;
-
 var list = {
   govuk: {
     urlUsers: '/gov-users',
@@ -50,7 +48,6 @@ var loadRealtime = {
 
 var loadOffline = {
 
-  jsonData: realtime_json.data,
   startCounter: 0,
 
   initDisplay: function() {
@@ -62,8 +59,8 @@ var loadOffline = {
     var tempDate = new Date;
 
     // loop through the data set and match the time as closely as possible.
-    for (var i = 0; i < loadOffline.jsonData.length; i++) {
-      tempDate.setTime(Date.parse(loadOffline.jsonData[i]._timestamp));
+    for (var i = 0; i < d.length; i++) {
+      tempDate.setTime(Date.parse(d[i]._timestamp));
       tempHour = tempDate.getHours();
 
       if (tempHour === hour) {
@@ -81,18 +78,18 @@ var loadOffline = {
     }
 
     // display the figure
-    loadOffline.updateUsersDisplay(loadOffline.jsonData[loadOffline.startCounter].unique_visitors);
+    loadOffline.updateUsersDisplay(d[loadOffline.startCounter].unique_visitors);
 
   },
 
   incrementUsers: function() {
-    if (loadOffline.startCounter === loadOffline.jsonData.length) {
+    if (loadOffline.startCounter === d.length) {
       loadOffline.startCounter = 0;
     } else {
       loadOffline.startCounter++;
     }
     // display the updated figure
-    loadOffline.updateUsersDisplay(loadOffline.jsonData[loadOffline.startCounter].unique_visitors);
+    loadOffline.updateUsersDisplay(d[loadOffline.startCounter].unique_visitors);
   },
 
   updateUsersDisplay: function(txt) {
@@ -105,8 +102,9 @@ $(function() {
 
   if (typeof offline !== 'undefined') {
 
-    //loadOffline.loadUsers();
-    loadOffline.initDisplay();
+    d = realtime_json.data;
+
+    loadOffline.initDisplay(d);
 
     // ...and simply increment once every 2 mins to (almost) match JSON data
     var update = window.setInterval(loadOffline.incrementUsers, 2*60*1000);
