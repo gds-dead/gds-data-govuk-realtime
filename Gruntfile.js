@@ -10,6 +10,21 @@ module.exports = function(grunt) {
     var startStr = tStart.getFullYear() + '-' + (pad(tStart.getMonth() + 1)) + '-' + pad(tStart.getDate());
 
     var globalConfig = {
+        months: [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ],
+        dateCollected: tStart,
         curlSrc: 'https://www.performance.service.gov.uk/data/government/realtime?start_at=' + startStr + 'T00%3A00%3A00%2B00%3A00&end_at=' + startStr + 'T23%3A59%3A59%2B00%3A00'
     };
 
@@ -178,7 +193,18 @@ module.exports = function(grunt) {
 
         var newSrc = splitSrc[0] + '\n' + allTheThings + '\n' + '<script type="text/javascript">' + splitSrc[1];
 
-        grunt.file.write('public/offline-index.html', newSrc);
+        // add in some small print
+        var small = '<small class="offline-demo">This offline demo uses data collected on ';
+        small += globalConfig.dateCollected.getDate() + ' ' + globalConfig.months[globalConfig.dateCollected.getMonth()] + ' ' + globalConfig.dateCollected.getFullYear();
+        small += '</small>';
+
+        var landmark = '<div class="pp-powered">Powered by www.gov.uk/performance';
+
+        newSrc = newSrc.split(landmark);
+        finalSrc = newSrc[0] + landmark + '\n' + small + '\n' + newSrc[1];
+        
+
+        grunt.file.write('public/offline-index.html', finalSrc);
 
     });
 
