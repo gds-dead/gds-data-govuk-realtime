@@ -194,7 +194,7 @@ module.exports = function(grunt) {
         var newSrc = splitSrc[0] + '\n' + allTheThings + '\n' + '<script type="text/javascript">' + splitSrc[1];
 
         // add in some small print
-        var small = '<small class="offline-demo">This offline demo uses data collected on ';
+        var small = '<small class="offline-demo">This offline demo uses data from ';
         small += globalConfig.dateCollected.getDate() + ' ' + globalConfig.months[globalConfig.dateCollected.getMonth()] + ' ' + globalConfig.dateCollected.getFullYear();
         small += '</small>';
 
